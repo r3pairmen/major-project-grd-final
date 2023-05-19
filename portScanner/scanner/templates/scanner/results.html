@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<h1>This is the scanner template</h1>
+{% block content %}
+<h1>Results for {{ ip_address }}</h1>
+{% if open_ports %}
+    <ul>
+    {% for port, service in open_ports %}
+        <li>Port {{ port }}: {{ service }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No open ports found.</p>
+{% endif %}
+{% endblock %}
